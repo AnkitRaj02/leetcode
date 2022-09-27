@@ -1,0 +1,37 @@
+# leetcode
+class Solution:
+    def rotate(self, a: List[int], k: int) -> None:
+        k=k%len(a)
+        if k<0:
+            k=k+len(a)
+
+        i=0
+        j=len(a)-k-1
+        temp=0
+        while(i<j):
+            temp=a[i]
+            a[i]=a[j]
+            a[j]=temp
+            i+=1
+            j-=1
+            
+
+        li=len(a)-k
+        ji=len(a)-1
+        while(li<ji):
+            temp=a[li]
+            a[li]=a[ji]
+            a[ji]=temp
+            li+=1
+            ji-=1
+        s=0
+        t=len(a)-1
+        while(s<t):
+            temp=a[s]
+            a[s]=a[t]
+            a[t]=temp
+            s+=1
+            t-=1
+        return a
+        
+        
