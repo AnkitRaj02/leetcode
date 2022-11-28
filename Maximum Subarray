@@ -1,0 +1,11 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        mx=-inf
+        a=0
+        for i in range(len(nums)):
+            a=a+nums[i]
+            if mx<a:
+                mx=a
+            if a<0:
+                a=0
+        return mx
